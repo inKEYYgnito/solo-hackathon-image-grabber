@@ -1,0 +1,1 @@
+# chrome-ext-image-grabber
