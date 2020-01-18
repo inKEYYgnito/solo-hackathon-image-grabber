@@ -1,0 +1,28 @@
+:root {
+  --foreground: #333;
+  --foregroundLight: #999;
+
+  --accent: #3498db;
+  --accentDark: #2791d9;
+}
+
+body {
+  color: var(--foreground);
+}
+
+/* links */
+a:link,
+a:visited {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: var(--accentDark);
+}
+
+input:focus,
+button:focus {
+  outline:0;
+}

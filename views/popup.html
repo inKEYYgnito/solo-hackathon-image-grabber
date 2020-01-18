@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Photo Swiper</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/main.css" type="text/css" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9em;
+      margin: 0;
+      box-sizing: border-box;
+      height: 100%;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    #controls-box {
+      justify-content: stretch;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      display: flex;
+      background-color: lightskyblue;
+    }
+
+    #filter_textbox {
+      height: 30px;
+      flex: 3;
+      font-size: 1em;
+    }
+
+    #label-select-all {
+      height: 30px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    #label-select-all input {
+      margin: auto 0.6em auto 1.3em;
+    }
+
+    #btn-download {
+      flex-shrink: 0;
+      height: 45px;
+      width: 100%;
+      position: sticky;
+      bottom: 0;
+      background-color: lightpink;
+      font-size: 0.9em;
+      transition: all 0.4 ease;
+    }
+
+    #btn-download:hover {
+      background-color: tomato;
+      color: lightpink;
+      font-size: 1.2em;
+    }
+
+    #btn-download:disabled {
+      background-color: lightgray;
+      cursor: not-allowed;
+    }
+    
+    #images-container {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      overflow-y: scroll;
+    }
+    
+    #images-container > label {
+      width: 100%;
+      text-align: center;
+    }
+
+    .image-cards {
+      border: solid 2px lightgray;
+      border-radius: 5px;
+      padding: 1vw;
+      display: flex;
+      flex-direction: column;
+      width: 29%;
+      margin: 0.8vw 0;
+    }
+
+    .image-cards > img {
+      max-height: 25vw;
+      object-fit: cover;
+      cursor: pointer;
+      margin: 1vw;
+      transition: all 0.4 ease;
+    }
+
+    .image-cards > img:hover {
+      opacity: 0.6;
+      transform: scale(1.05);
+    }
+
+    .image-tools > img:hover {
+      opacity: 0.6;
+      transform: scale(1.2);
+    }
+
+    .checked {
+      border: solid 2px tomato;
+    }
+  
+    .image-tools {
+      height: 3.5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      transition: all 0.4 ease;
+    }
+
+    .image-tools > span {
+      overflow: hidden;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      cursor: default;
+    }
+
+    .image-tools > img {
+      height: 100%;
+      cursor: pointer
+    }
+
+    .btn-open-img {
+      margin-left: auto;
+      margin-right: 10px;
+    }
+
+  </style>
+  <script src="/lib/zepto.js"></script>
+  <script src="/scripts/defaults.js"></script>
+  <script src="/scripts/popup.js"></script>
+</head>
+
+<body>
+  <div id="controls-box">
+    <input type="text" id="filter_textbox" placeholder="Filter by name or URL"
+    title="Filter image results using keywords or regular expressions." />
+    <label id="label-select-all"></label>
+  </div>
+  <div id="images-container"></div>
+  <input type="button" id="btn-download" class="accent" value="DOWNLOAD" disabled="true" />
+</body>
+
+</html>
